@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "e2e"
+  ],
+  "scripts": {
+    "build:client": "yarn workspace imdb-finder-app-client build",
+    "dev": "yarn workspace imdb-finder-app-server dev",
+    "dev:debug": "yarn workspace imdb-finder-app-server dev:debug",
+    "heroku-postbuild": "yarn workspace imdb-finder-app-client build",
+    "start": "yarn workspace imdb-finder-app-server start",
+    "dev:cypress": "yarn workspace imdb-finder-app-server dev:e2e",
+    "e2e:open": "yarn workspace imdb-finder-app-e2e e2e:open",
+    "e2e:run": "yarn workspace imdb-finder-app-e2e e2e:run"
+  },
+  "engines": {
+    "node": "^14.15"
+  }
+}
