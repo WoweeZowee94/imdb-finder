@@ -8,6 +8,8 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import Profile from "./Profile.js";
 import TopBar from "./layout/TopBar";
+import SearchIndex from "./SearchIndex.js";
+import MovieShow from "./MovieShow.js";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -31,6 +33,8 @@ const App = (props) => {
         <Route exact path="/">
           <SignInForm />
         </Route>
+        <Route exact path="/movies/:id" component={MovieShow} />
+        <Route exact path="/search" component={SearchIndex} />
         <AuthenticatedRoute exact path="/profile" component={Profile} user={currentUser} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
