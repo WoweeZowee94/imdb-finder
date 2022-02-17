@@ -2,7 +2,7 @@ const Model = require('./Model')
 
 class FilmsList extends Model{
   static get tableName() {
-    return 'filmlists'
+    return 'filmslists'
   }
 
   static relationMappings(){
@@ -13,7 +13,7 @@ class FilmsList extends Model{
         relation: Model.BelongsToOneRelation,
         modelClass: User,
         join: {
-          from: 'filmlists.userId',
+          from: 'filmslists.userId',
           to: 'users.id'
         }
       }
