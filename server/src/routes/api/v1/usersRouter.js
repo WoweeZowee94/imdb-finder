@@ -17,4 +17,15 @@ usersRouter.post("/", async (req, res) => {
   }
 });
 
+usersRouter.get("/:id", async (req, res) => {
+  let id = req.user.id 
+  try {
+    const user = await User.query()
+    user.filmLists = user.$relatedQuery("filmslists")
+    return res.status(201).json({user: user})
+  } catch (error) {
+    return res.status(422).json({ errors: error })
+  }
+})
+
 export default usersRouter;
