@@ -1,5 +1,6 @@
 import got from "got";
 
+
 const imdbKey = "k_1c5tw4ku"
 
 class ImdbAPIClient {   
@@ -24,6 +25,7 @@ class ImdbAPIClient {
     } catch (error) {
       return { error: error.message }
     }
+
   }
 }
 

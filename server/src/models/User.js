@@ -2,6 +2,7 @@
 const Bcrypt = require("bcrypt");
 const unique = require("objection-unique");
 const Model = require("./Model");
+const FilmsList = require("./FilmsList.js")
 
 const saltRounds = 10;
 
@@ -13,6 +14,22 @@ const uniqueFunc = unique({
 class User extends uniqueFunc(Model) {
   static get tableName() {
     return "users";
+  }
+
+  static get relationMappings() {
+    const FilmsList = require("./FilmsList.js")
+
+    return {
+
+      filmslists: {
+        relation: Model.HasManyRelation,
+        modelClass: FilmsList,
+        join: {
+          from: "users.id",
+          to: "filmslists.userId"
+        }
+      }
+    }
   }
 
   set password(newPassword) {
