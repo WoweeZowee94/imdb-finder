@@ -22,8 +22,6 @@ imdbRouter.get("/", async (req, res) => {
 imdbRouter.get("/:id", async (req, res) => {
   const id = req.params.id
   try {
-    console.log("IN THE ROUTER")
-    console.log(ImdbAPIClient)
     const imdbMovieResponse = await ImdbAPIClient.getTitle(id)
     const idData = JSON.parse(imdbMovieResponse)
     return res
