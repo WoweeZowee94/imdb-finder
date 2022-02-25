@@ -67,18 +67,19 @@ const SignInForm = () => {
 
   return (
     <div className="grid-container" onSubmit={onSubmit}>
-      <h1>Welcome to ImdbFinder</h1>
+      <div className="sign-in">
+      <h1 className="sign-in-content">Welcome to ImdbFinder</h1>
       <form>
         <div>
-          <label>
-            Email
+          <label className="form-content">
+            Email:
             <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
             <FormError error={errors.email} />
           </label>
         </div>
         <div>
-          <label>
-            Password
+          <label className="form-content">
+            Password:
             <input
               type="password"
               name="password"
@@ -88,10 +89,11 @@ const SignInForm = () => {
             <FormError error={errors.password} />
           </label>
         </div>
-        <div>
+        <div className="form-content">
           <input type="submit" className="button" value="Sign In" />
         </div>
       </form>
+      </div>
     </div>
   );
 };

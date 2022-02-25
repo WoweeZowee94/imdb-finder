@@ -86,8 +86,9 @@ const RegistrationForm = () => {
   }
 
   return (
-    <div className="grid-container">
-      <h1>Register</h1>
+    <div className="sign-in">
+      <h1 className="title-review">Register Your Profile:</h1>
+      <div className="form-content">
       <form onSubmit={onSubmit}>
         <div>
           <label>
@@ -124,6 +125,7 @@ const RegistrationForm = () => {
           <input type="submit" className="button" value="Register" />
         </div>
       </form>
+      </div>
     </div>
   );
 };

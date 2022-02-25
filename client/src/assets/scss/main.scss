@@ -11,7 +11,14 @@
 :root {
   -moz-tab-size: 4;
   tab-size: 4;
+  font-family: 'PT Sans', sans-serif;;
 }
+
+#app, html {
+  background-color: #323433;
+  font-family: 'PT Sans', sans-serif;
+}
+
 
 .search-bar {
   width: 50%;
@@ -19,6 +26,43 @@
   margin-right: auto;
   margin-top: 50px;
   margin-bottom: 30px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.list-container {
+  padding-bottom: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px;
+  width: 80%
+}
+
+.column-grid {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  padding-top: 5%;
+  row-gap: 15px;
+}
+
+.filmsList {
+  border: 4px solid black
+}
+
+h4,h3,h5, p {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.menu-text {
+  border: 3px solid black;
+  border-radius: 5px;
+  background-color: #f5c519;
+  font-family: 'PT Sans', sans-serif;
+  font-size: large;
+  margin-left: 10px;
 }
 
 .movie-tile, .movie-list {
@@ -27,29 +71,224 @@
   margin-top: 25px;
   margin-bottom: 25px;
   width: 60%;
-  border: 3px solid black;
+  border: 5px solid black;
   border-radius: 25px;
-  background-color: gold;
+  background-color: #f5c519;
+  font-family: 'PT Sans', sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .movie-results {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 25px;
+  margin-top: 35px;
   margin-bottom: 25px;
-  width: 60%;
-  border: 1px solid black;
-  background-color: #96a6bc;
+  width: 40%;
+  border: 5px solid black;
+  border-radius: 5px;
+  background-color: #f5c519;
   text-align: center;
-  opacity: 0.5;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .movie-tile-contents {
   text-align: center;
   padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .movie-image {
   padding: 10px;
-  filter: drop-shadow(10px 10px 4px #96a6bc)
+  filter: drop-shadow(10px 10px 4px #676767);
 }
+
+
+.search-label {
+  color: #f5c519;
+  text-align: center;
+}
+
+.top-bar {
+  height: 85px;
+  background-color: #323433;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.review-form {
+  justify-content: center;
+  border: 3px solid black;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 60%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.reviews-profile {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: white;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.grid-wrapper {
+text-align: center;
+}
+
+.homepage-content {
+  text-align: center;
+  background-color: #f5c519;
+  color: #323433;
+  border: 5px solid black;
+  margin-top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 40%;
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-family: 'PT Sans', sans-serif;
+  border-radius: 15px;
+}
+
+.title-homepage {
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
+}
+
+.text-styling {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.body-styling {
+  
+  margin-top: 15px;
+  margin-bottom: 30px
+}
+
+.profile-heading {
+  font-family: 'PT Sans', sans-serif;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.button {
+  margin-right: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  border-radius: 5px;
+  
+}
+
+.user-tag {
+ background-color: #f5c519;
+ border: 5px solid black;
+ border-radius: 5px;
+ width: 40%;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 20px;
+ padding: 10px;
+ font-family: 'PT Sans', sans-serif;
+}
+
+.add-film {
+  color: white;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sign-in-content {
+  color: #323433;
+  text-align: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.form-content {
+margin-left: 20px;
+margin-right: 20px;
+margin-top: 20px;
+margin-bottom: 20px;
+width: 60%
+}
+
+.sign-in {
+  color: #323433;
+  font-family: 'PT Sans', sans-serif;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f5c519;
+  border: 6px solid black;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 60%;
+  justify-content: center;
+}
+
+.movie-review {
+ border: 3px solid #323433;
+ border-radius: 10px;
+ margin-top: 20px;
+ width: 50%;
+ margin-bottom: 60px;
+ margin-left: auto;
+ margin-right: auto;
+ text-align: center;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-top: 20px;
+ padding-bottom: 20px;
+ font-family: 'PT Sans', sans-serif;
+ 
+}
+
+.title-review {
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px;
+  color: #323433
+}
+
+.profile-reviews {
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.message-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+

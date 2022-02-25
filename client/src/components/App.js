@@ -10,6 +10,8 @@ import Profile from "./Profile.js";
 import TopBar from "./layout/TopBar";
 import SearchIndex from "./SearchIndex.js";
 import MovieShow from "./MovieShow.js";
+import Homepage from "./Homepage.js";
+import TopMoviesShow from "./TopMoviesShow.js"
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -22,7 +24,6 @@ const App = (props) => {
     }
   }
   
-
   useEffect(() => {
     fetchCurrentUser()
   }, [])
@@ -32,9 +33,10 @@ const App = (props) => {
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
-          <SignInForm />
+          <Homepage user={currentUser}/>
         </Route>
-        <Route exact path="/movies/:id" component={MovieShow} />
+        <Route exact path="/top-250" component={TopMoviesShow}></Route>
+        <AuthenticatedRoute exact path="/movies/:id" component={MovieShow} user={currentUser} />
         <Route exact path="/search" component={SearchIndex} />
         <AuthenticatedRoute exact path="/profile" component={Profile} user={currentUser} />
         <Route exact path="/users/new" component={RegistrationForm} />

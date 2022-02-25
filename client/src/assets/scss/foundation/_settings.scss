@@ -69,12 +69,15 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
+  primary: #818181,
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
+  menu: #323433
 );
+$gold: #f5c519;
+$slate-gray: #323433;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
@@ -268,7 +271,7 @@ $accordionmenu-arrow-size: 6px;
 
 $badge-background: $primary-color;
 $badge-color: $white;
-$badge-color-alt: $black;
+$badge-color-alt: $gold;
 $badge-palette: $foundation-palette;
 $badge-padding: 0.3em;
 $badge-minwidth: 2.1em;
@@ -298,7 +301,7 @@ $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-background-hover: scale-color($button-background, $lightness: -35%);
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
@@ -419,7 +422,7 @@ $dropdownmenu-padding: $global-menu-padding;
 $dropdownmenu-nested-margin: 0;
 $dropdownmenu-submenu-padding: $dropdownmenu-padding;
 $dropdownmenu-border: 1px solid $medium-gray;
-$dropdown-menu-item-color-active: get-color(primary);
+$dropdown-menu-item-color-active: get-color(menu);
 $dropdown-menu-item-background-active: transparent;
 
 // 19. Flexbox Utilities
@@ -496,8 +499,8 @@ $menu-nested-margin: $global-menu-nested-margin;
 $menu-items-padding: $global-menu-padding;
 $menu-simple-margin: 1rem;
 $menu-item-color-active: $white;
-$menu-item-color-alt-active: $black;
-$menu-item-background-active: get-color(primary);
+$menu-item-color-alt-active: $gold;
+$menu-item-background-active: get-color(menu);
 $menu-icon-spacing: 0.25rem;
 $menu-state-back-compat: true;
 $menu-centered-back-compat: true;
@@ -872,7 +875,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-background: $slate-gray;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
