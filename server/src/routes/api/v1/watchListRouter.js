@@ -20,18 +20,4 @@ watchListRouter.post('/', async (req, res) => {
   }
 })
 
-// filmsListRouter.post('/', async (req, res) => {
-//   const listInput = req.body
-//   const { movieId, userId } = listInput
-//     try {
-//       const newList = await FilmsList.query().insertAndFetch({ userId, movieId })
-//       return res.status(201).json({ filmsList: newList })
-//   } catch (error) {
-//       if (error instanceof ValidationError) {
-//           return res.status(422).json({ errors: error.data })
-//       }
-//       return res.status(500).json({ errors: error })
-//   }
-// })
-
 export default watchListRouter

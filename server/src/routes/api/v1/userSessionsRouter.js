@@ -23,49 +23,49 @@ sessionRouter.post("/", (req, res, next) => {
 
 sessionRouter.get("/current", async (req, res) => {
   if (req.user) {
-    const watchLists = await req.user.$relatedQuery("watchlists")
-    const filmLists = await req.user.$relatedQuery("filmslists")
-    const reviews = await req.user.$relatedQuery("reviews")
-    console.log(filmLists)
+    const watchLists = await req.user.$relatedQuery("watchlists");
+    const filmLists = await req.user.$relatedQuery("filmslists");
+    const reviews = await req.user.$relatedQuery("reviews");
+    console.log(filmLists);
 
-      const getTitleCall = async (id) => {
-        const film = await ImdbAPIClient.getTitle(id)
-        return film
-      }
-      
-      let queryFilmList = await Promise.all(
-          filmLists.map( async (film) => {
-            try{
-            const returnedFilm =  await getTitleCall(film.movieId)
-            console.log(returnedFilm)
-            const parsedFilm = JSON.parse(returnedFilm)
-            console.log(parsedFilm)
-            return parsedFilm
-          }  catch (error) {
-            throw error 
-          }
-          })
-        )
+    const getTitleCall = async (id) => {
+      const film = await ImdbAPIClient.getTitle(id);
+      return film;
+    };
 
-        let queryWatchList = await Promise.all(
-          watchLists.map( async (film) => {
-            try{
-            const returnedFilm =  await getTitleCall(film.movieId)
-            console.log(returnedFilm)
-            const parsedFilm = JSON.parse(returnedFilm)
-            console.log(parsedFilm)
-            return parsedFilm
-          }  catch (error) {
-            throw error 
-          }
-          })
-        )
+    let queryFilmList = await Promise.all(
+      filmLists.map(async (film) => {
+        try {
+          const returnedFilm = await getTitleCall(film.movieId);
+          console.log(returnedFilm);
+          const parsedFilm = JSON.parse(returnedFilm);
+          console.log(parsedFilm);
+          return parsedFilm;
+        } catch (error) {
+          throw error;
+        }
+      })
+    );
 
-    req.user.filmLists = queryFilmList
-    req.user.watchLists = queryWatchList
-    req.user.reviews = reviews
+    let queryWatchList = await Promise.all(
+      watchLists.map(async (film) => {
+        try {
+          const returnedFilm = await getTitleCall(film.movieId);
+          console.log(returnedFilm);
+          const parsedFilm = JSON.parse(returnedFilm);
+          console.log(parsedFilm);
+          return parsedFilm;
+        } catch (error) {
+          throw error;
+        }
+      })
+    );
+
+    req.user.filmLists = queryFilmList;
+    req.user.watchLists = queryWatchList;
+    req.user.reviews = reviews;
     res.status(200).json(req.user);
-    console.log(req.user)
+    console.log(req.user);
   } else {
     res.status(401).json(undefined);
   }
