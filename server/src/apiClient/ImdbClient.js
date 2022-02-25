@@ -27,6 +27,17 @@ class ImdbAPIClient {
     }
 
   }
+
+  static async getTopMovies() {
+    try {
+      const topMoviesUrl = `https://imdb-api.com/en/API/Top250Movies/${imdbKey}`
+      const topMoviesResponse = await got(topMoviesUrl)
+      const topMoviesResponseBody = topMoviesResponse.body
+      return topMoviesResponseBody
+    } catch (error) {
+      return { error: error.message }
+    }
+  }
 }
 
 export default ImdbAPIClient;
