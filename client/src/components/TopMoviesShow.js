@@ -25,12 +25,13 @@ const TopMovies = (props) => {
 
   const topMoviesList = topMovies?.items.map((movie) => {
     return (
+      
       <div className="movie-tile" key={movie.id}>
         <div className="movie-tile-contents">
           <h2 className="text-styling"> #{movie.rank} - {movie.title} </h2>
           <h3 className="text-styling"> {movie.year}</h3>
           <Link to={`/movies/${movie.id}`}>
-            <img src={movie.image} width="300" height="300" className="movie-image"/>
+            <img src={movie.image} width="200" height="300" className="movie-image"/>
           </Link>
           <h3 className="text-styling"> <b>Rating:</b> {movie.imDbRating} </h3>
         </div>
@@ -40,9 +41,11 @@ const TopMovies = (props) => {
 
   console.log(topMovies)
   return (
-    <div>
+    <div className="grid-wrapper">
     <h1 className='profile-heading'> Top 250 Films: </h1>
-    <p> {topMoviesList} </p>
+      <div className="list-container">
+    <div className="column-grid"> {topMoviesList} </div>
+      </div>
     </div>
   )
 

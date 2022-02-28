@@ -76,7 +76,7 @@ const NewReviewForm = ({ user, movieId, postReview, movieTitle }) => {
             />
           </label>
 
-          <div className="button">
+          <div>
             <input className="button" type="submit" value="Submit" />
           </div>
         </div>

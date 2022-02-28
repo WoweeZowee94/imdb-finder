@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
@@ -19,6 +20,33 @@
   font-family: 'PT Sans', sans-serif;
 }
 
+a {
+  color: gray
+}
+
+a:hover {
+  color: #f5c519;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #f5c519;
+  text-decoration: underline;
+  font-size: 150%;
+}
+
+a:focus {
+  color: #f5c519;
+  text-decoration: underline;
+}
+
+h4 {
+  font-family: 'PT Sans', sans-serif;
+}
+
+ul {
+  background-color: #323433;
+}
 
 .search-bar {
   width: 50%;
@@ -44,7 +72,6 @@
   text-align: center;
   display: grid;
   grid-template-columns: 33% 33% 33%;
-  padding-top: 5%;
   row-gap: 15px;
 }
 
@@ -52,9 +79,9 @@
   border: 4px solid black
 }
 
-h4,h3,h5, p {
-  font-family: 'PT Sans', sans-serif;
-}
+// h4,h3,h5, p {
+//   font-family: 'PT Sans', sans-serif;
+// }
 
 .menu-text {
   border: 3px solid black;
@@ -70,7 +97,7 @@ h4,h3,h5, p {
   margin-right: auto;
   margin-top: 25px;
   margin-bottom: 25px;
-  width: 60%;
+  width: 80%;
   border: 5px solid black;
   border-radius: 25px;
   background-color: #f5c519;
@@ -111,11 +138,16 @@ h4,h3,h5, p {
   text-align: center;
 }
 
-.top-bar {
-  height: 85px;
+.top-bar, .top-bar ul {
+  height: 50px;
+  margin-left: 5px;
+  margin-right: 15px;
+  margin-top: 5px; 
   background-color: #323433;
   font-family: 'PT Sans', sans-serif;
 }
+
+
 
 .review-form {
   justify-content: center;
@@ -182,15 +214,6 @@ text-align: center;
   font-family: 'PT Sans', sans-serif;
   color: whitesmoke;
   text-align: center;
-}
-
-.button {
-  margin-right: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  border-radius: 5px;
-  
 }
 
 .user-tag {
@@ -291,4 +314,67 @@ width: 60%
   margin-bottom: 30px;
 }
 
+.title-homepage {
+  font-family: 'PT Sans', sans-serif;
+}
 
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  border: none;
+  color: white;
+  background-color: gray;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 0 gray;
+  transition: ease-out 0.2s;
+  font-size: 1rem;
+  outline: none;
+  padding: 5px;
+  border: 3px solid black;
+  text-align: center;
+  display: inline
+}
+
+.button:hover {
+  box-shadow: inset 150px 0 0 0 #f5c519;
+  background-color: #323433;
+  color: black;
+  cursor: pointer
+}
+
+.button:active {
+  font-size: 1.5rem;
+  background-color: #323433
+}
+
+.button:focus {
+  background-color: #f5c519;
+  color:black
+}
+
+.menu {
+  margin-top: 50px;
+  background-color: #323433
+}
+
+.menu-text {
+  height: 50px
+}
+
+.top-movie-tile {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 95%;
+  border: 5px solid black;
+  border-radius: 25px;
+  background-color: #f5c519;
+  font-family: 'PT Sans', sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
+}

@@ -4,8 +4,42 @@ import getClientIndexPath from "../config/getClientIndexPath.js";
 const router = new express.Router();
 
 const clientRoutes = ["/", "/user-sessions/new", "/users/new", "/profile", "/search", "/movies/:id", "/reviews", "/reviews/:id", "/top-250"];
+const authedClientRoutes = ["/profile"]
 router.get(clientRoutes, (req, res) => {
   res.sendFile(getClientIndexPath());
 });
 
+router.get(authedClientRoutes, (req, res) => {
+  if (req.user) {
+    res.sendFile(getClientIndexPath());
+  } else {
+    res.redirect("/user-sessions/new")
+  }
+});
+
 export default router;
+
+
+   
+// import express from "express";
+// import getClientIndexPath from "../config/getClientIndexPath.js";
+
+// const router = new express.Router();
+
+// const clientRoutes = ["/", "/user-sessions/new", "/users/new"];
+
+// const authedClientRoutes = ["/profile"];
+
+// router.get(clientRoutes, (req, res) => {
+//   res.sendFile(getClientIndexPath());
+// });
+
+// router.get(authedClientRoutes, (req, res) => {
+//   if (req.user) {
+//     res.sendFile(getClientIndexPath());
+//   } else {
+//     res.redirect("/user-sessions/new")
+//   }
+// });
+
+// export default router;
