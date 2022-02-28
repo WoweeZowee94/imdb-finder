@@ -19,6 +19,8 @@ const [reviews, setReviews] = useState([])
 
 const [shouldRedirect, setShouldRedirect] = useState(false)
 
+const [errorMessage, setErrorMessage] = useState([])
+
 const movieId = props.match.params.id
 const movieTitle = movie?.title
 
@@ -66,12 +68,19 @@ useEffect(() => {
   })
 }, [])
 
-debugger
+let ListMessage
+let filmsListIdArray = []
+props.user.filmLists.map((film) => {
+  filmsListIdArray.push(film.id)
+})
 
 const handleSubmit = () => {
+if (filmsListIdArray.includes(movie.id)) {
+  setErrorMessage("This film is already in your list!")
+} else {
   postList(filmsList)
-  console.log(filmsList)
-}
+}}
+  
 
 const handleWatchListSubmit = () => {
   postWatchList(watchList)
@@ -199,12 +208,15 @@ return (
     <h4> Genres: {movie?.genres} </h4>
     <h4> Starring: {movie?.stars} </h4>
     <h5 className="body-styling"> <i>{movie?.plot}</i> </h5>
-    <div className="button" onClick={handleSubmit}>
+    <div className="container">
+    <div  onClick={handleSubmit}>
           <input className="button" type="submit" value="Add to Films" />
         </div>
-    <div className="button" onClick={handleWatchListSubmit}>
+    <div onClick={handleWatchListSubmit}>
           <input className="button" type="submit" value="Add to Watch list" />
         </div>
+    </div>
+    <div> {errorMessage} </div>
     </div>
     <NewReviewForm user={props.user} movieId={movieId} postReview={postReview} movieTitle={movieTitle}/>
     <div> 
