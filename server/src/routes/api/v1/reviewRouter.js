@@ -6,20 +6,16 @@ const { ValidationError } = Objection;
 const reviewRouter = new express.Router();
 
 reviewRouter.get("/:id", async (req, res) => {
-    const id = req.params.id
-    try {
-      const reviews = await Review.query().where('movieId', '=', `${id}`)
+  const id = req.params.id;
+  try {
+    const reviews = await Review.query().where("movieId", "=", `${id}`);
     //   const idData = JSON.parse(reviews)
-      return res
-      .set({ "Content-Type": "application/json" })
-      .status(200)
-      .json({ reviews: reviews })
-    } catch (error) {
-      console.log(error)
-      return res.status(401).json({ errors: error })
-    }
-  })
-  
+    return res.set({ "Content-Type": "application/json" }).status(200).json({ reviews: reviews });
+  } catch (error) {
+    console.log(error);
+    return res.status(401).json({ errors: error });
+  }
+});
 
 reviewRouter.post("/", async (req, res) => {
   const formInput = req.body;
