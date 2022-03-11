@@ -1,37 +1,31 @@
-import express from "express"
+import express from "express";
 
-import ImdbAPIClient from "../../../apiClient/ImdbClient.js"
+import ImdbAPIClient from "../../../apiClient/ImdbClient.js";
 
-const imdbRouter = new express.Router()
+const imdbRouter = new express.Router();
 
 imdbRouter.get("/", async (req, res) => {
-  console.log(req.query)
-  const title = req.query.title 
+  console.log(req.query);
+  const title = req.query.title;
   try {
-    const imdbTitleResponse = await ImdbAPIClient.getMovies(title)
-    const movieData = JSON.parse(imdbTitleResponse)
-    return res
-      .set({ "Content-Type": "application/json" })
-      .status(200)
-      .json({ movies: movieData })
+    const imdbTitleResponse = await ImdbAPIClient.getMovies(title);
+    const movieData = JSON.parse(imdbTitleResponse);
+    return res.set({ "Content-Type": "application/json" }).status(200).json({ movies: movieData });
   } catch (error) {
-    return res.status(401).json({ errors: error })
+    return res.status(401).json({ errors: error });
   }
-})
+});
 
 imdbRouter.get("/:id", async (req, res) => {
-  const id = req.params.id
+  const id = req.params.id;
   try {
-    const imdbMovieResponse = await ImdbAPIClient.getTitle(id)
-    const idData = JSON.parse(imdbMovieResponse)
-    return res
-    .set({ "Content-Type": "application/json" })
-    .status(200)
-    .json({ movie: idData })
+    const imdbMovieResponse = await ImdbAPIClient.getTitle(id);
+    const idData = JSON.parse(imdbMovieResponse);
+    return res.set({ "Content-Type": "application/json" }).status(200).json({ movie: idData });
   } catch (error) {
-    console.log(error)
-    return res.status(401).json({ errors: error })
+    console.log(error);
+    return res.status(401).json({ errors: error });
   }
-})
+});
 
-export default imdbRouter
+export default imdbRouter;
