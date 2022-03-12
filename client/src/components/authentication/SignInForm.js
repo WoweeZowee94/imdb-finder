@@ -68,7 +68,7 @@ const SignInForm = () => {
   return (
     <div className="grid-container" onSubmit={onSubmit}>
       <div className="sign-in">
-      <h1 className="sign-in-content">Welcome to ImdbFinder</h1>
+      <h1 className="sign-in-content">Welcome to MyIMDb</h1>
       <form>
         <div>
           <label className="form-content">

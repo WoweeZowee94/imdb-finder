@@ -7,11 +7,10 @@ const NewReviewForm = ({ user, movieId, postReview, movieTitle }) => {
     rating: "",
     userId: user.id,
     movieId: movieId,
-    movieTitle: movieTitle
+    movieTitle: movieTitle,
   });
 
-  console.log(newReview);
-  newReview.movieTitle = movieTitle
+  newReview.movieTitle = movieTitle;
 
   const handleInputChange = (event) => {
     setNewReview({
@@ -27,16 +26,15 @@ const NewReviewForm = ({ user, movieId, postReview, movieTitle }) => {
       body: "",
       userId: user.id,
       movieId: movieId,
-      movieTitle: movieTitle
-    })
-  }
-
+      movieTitle: movieTitle,
+    });
+  };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    postReview(newReview)
-    clearForm()
-  }
+    event.preventDefault();
+    postReview(newReview);
+    clearForm();
+  };
 
   return (
     <div className="review-form">
@@ -45,11 +43,7 @@ const NewReviewForm = ({ user, movieId, postReview, movieTitle }) => {
         <div className="form-fields">
           <label>
             Title:
-            <input 
-            type="text" 
-            name="title" 
-            onChange={handleInputChange} 
-            value={newReview.title} />
+            <input type="text" name="title" onChange={handleInputChange} value={newReview.title} />
           </label>
 
           <label>

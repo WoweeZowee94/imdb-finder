@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import SignOutButton from "../authentication/SignOutButton";
 // <Link to="/user-sessions/new">Sign In</Link>
 const TopBar = ({ user }) => {
@@ -19,6 +19,7 @@ const TopBar = ({ user }) => {
       <SignOutButton />
     </li>,
   ];
+
 
   return (
     <div className="top-bar">

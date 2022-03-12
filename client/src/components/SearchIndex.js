@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-const SearchIndex= (props) => {
+const SearchIndex = (props) => {
   const [movies, setMovies] = useState(undefined);
-  const [parameter, setParameter] = useState({ 
-    title: "" 
-  })
-  
+  const [parameter, setParameter] = useState({
+    title: "",
+  });
+
   const getMovies = async () => {
     try {
       const response = await fetch(`/api/v1/movies?title=${parameter.title}`);
@@ -21,40 +21,43 @@ const SearchIndex= (props) => {
       console.error(`Error in fetch: ${error.message}`);
     }
   };
-  
+
   const handleInputChange = (event) => {
-    console.log(parameter.title)
     setParameter({
       ...parameter,
-      [event.currentTarget.name]: event.currentTarget.value 
-    })
-  }
-  
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
+  };
+
   const handleSubmit = async (event) => {
-    getMovies()
+    getMovies();
     event.preventDefault();
-  }
+  };
 
   let moviesList = movies?.results.map((movie) => {
     return (
-      
       <div className="movie-tile" key={movie.id}>
         <div className="movie-tile-contents">
           <h2 className="text-styling"> {movie.title} </h2>
-          <h3 className="text-styling"> {movie.description} - {movie.runtimeStr} </h3>
+          <h3 className="text-styling">
+            {" "}
+            {movie.description} - {movie.runtimeStr}{" "}
+          </h3>
           <Link to={`/movies/${movie.id}`}>
-            <img src={movie.image} width="300" height="300" className="movie-image"/>
+            <img src={movie.image} width="300" height="300" className="movie-image" />
           </Link>
-          <h3 className="text-styling"> <b>Rating:</b> {movie.imDbRating} </h3>
+          <h3 className="text-styling">
+            {" "}
+            <b>Rating:</b> {movie.imDbRating}{" "}
+          </h3>
         </div>
       </div>
-      
     );
   });
 
-  let totalResults = 0
+  let totalResults = 0;
   if (movies?.results.length > 0) {
-    totalResults = movies?.results.length
+    totalResults = movies?.results.length;
   }
 
   return (
@@ -70,9 +73,9 @@ const SearchIndex= (props) => {
       </form>
       <h2 className="movie-results">Total Results: {totalResults} of 50 </h2>
       <div className="grid-container">
-      <ul className="movies-list">{moviesList}</ul>
+        <ul className="movies-list">{moviesList}</ul>
       </div>
-      </div>
+    </div>
   );
 };
 

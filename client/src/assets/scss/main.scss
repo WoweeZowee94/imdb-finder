@@ -214,18 +214,19 @@ text-align: center;
   font-family: 'PT Sans', sans-serif;
   color: whitesmoke;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .user-tag {
- background-color: #f5c519;
- border: 5px solid black;
- border-radius: 5px;
- width: 40%;
- margin-left: auto;
- margin-right: auto;
- margin-top: 20px;
- padding: 10px;
- font-family: 'PT Sans', sans-serif;
+  background-color: #f5c519;
+  border: 5px solid black;
+  border-radius: 5px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 10px;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .add-film {
@@ -273,20 +274,19 @@ width: 60%
 }
 
 .movie-review {
- border: 3px solid #323433;
- border-radius: 10px;
- margin-top: 20px;
- width: 50%;
- margin-bottom: 60px;
- margin-left: auto;
- margin-right: auto;
- text-align: center;
- padding-left: 20px;
- padding-right: 20px;
- padding-top: 20px;
- padding-bottom: 20px;
- font-family: 'PT Sans', sans-serif;
- 
+  border: 3px solid #323433;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 50%;
+  margin-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .title-review {
@@ -309,6 +309,10 @@ width: 60%
   padding-bottom: 15px;
 }
 
+.review-margins {
+  margin-bottom: 4rem;
+}
+
 .message-text {
   text-align: center;
   margin-bottom: 30px;
@@ -317,7 +321,6 @@ width: 60%
 .title-homepage {
   font-family: 'PT Sans', sans-serif;
 }
-
 
 .button {
   display: inline-flex;
@@ -359,7 +362,6 @@ width: 60%
 .menu {
   margin-top: 50px;
   background-color: #323433;
-  // justify-content: center;
   align-items: center;
 }
 
@@ -379,4 +381,29 @@ width: 60%
   font-family: 'PT Sans', sans-serif;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.remove {
+  background-color: #323433;
+  color: gray;
+  margin-top: 5px;
+}
+
+.remove:hover {
+  color: #f5c519;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.filmsList:hover {
+transform: scale(1.03);
+
+}
+
+.filmsList:active {
+  font-size: 1.5rem;
+}
+
+.fa-regular {
+  color: #f5c519;
 }

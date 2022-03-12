@@ -11,29 +11,29 @@ import TopBar from "./layout/TopBar";
 import SearchIndex from "./SearchIndex.js";
 import MovieShow from "./MovieShow.js";
 import Homepage from "./Homepage.js";
-import TopMoviesShow from "./TopMoviesShow.js"
+import TopMoviesShow from "./TopMoviesShow.js";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
   const fetchCurrentUser = async () => {
     try {
-      const user = await getCurrentUser()
-      setCurrentUser(user)
-    } catch(err) {
-      setCurrentUser(null)
+      const user = await getCurrentUser();
+      setCurrentUser(user);
+    } catch (err) {
+      setCurrentUser(null);
     }
-  }
-  
+  };
+
   useEffect(() => {
-    fetchCurrentUser()
-  }, [])
+    fetchCurrentUser();
+  }, []);
 
   return (
     <Router>
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
-          <Homepage user={currentUser}/>
+          <Homepage user={currentUser} />
         </Route>
         <Route exact path="/top-250" component={TopMoviesShow}></Route>
         <AuthenticatedRoute exact path="/movies/:id" component={MovieShow} user={currentUser} />
